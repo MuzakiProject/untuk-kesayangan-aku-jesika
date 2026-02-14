@@ -84,7 +84,6 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px) saturate(180%);
             padding: 48px;
-            max-width: 680px;
             width: 100%;
             box-shadow: 
                 0 0 0 1px rgba(255, 255, 255, 0.3),

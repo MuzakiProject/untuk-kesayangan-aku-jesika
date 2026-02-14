@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Quest ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+
+    <div class="game-container">
+        <div class="progress-container">
+            <div class="progress-label">
+                <span>Progress Quest</span>
+                <span id="progressText">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress"></div>
+            </div>
+        </div>
+
+        <div class="stage active" id="stage1">
+            <h1>Buat kamu yang tersayang</h1>
+            <h1 style="font-size: 1.5rem;">Jesika Salsabillah Adhitia</h1>
+            <div class="emoji-big">🎮</div>
+            <div class="question">
+                Haiiii sayang! Hari ini hari Valentine, dan aku punya quest spesial untukmu!
+                <br><br>
+                Apakah kamu siap untuk petualangan romantis ini?
+            </div>
+            <div class="button-group">
+                <button class="btn btn-choice" onclick="nextStage(2)"><span>🚀 Ayo mulai!</span></button>
+                <button class="btn btn-choice" onclick="nextStage(2)"><span>💕 Tentu, aku siap!</span></button>
+            </div>
+        </div>
+
+        <div class="stage" id="stage2">
+            <h1>Pertanyaan Penting</h1>
+            <div class="emoji-big">🤔</div>
+            <div class="question">
+                Kamu Cinta dan Sayang sama ak ngga?
+            </div>
+            <div class="button-group">
+                <button class="btn btn-yes" onclick="nextStage(3)"><span>✨ IYAAA! ✨</span></button>
+                <button class="btn btn-no" id="noBtn" onmouseover="moveButton()" onclick="moveButton()"><span>Tidak</span></button>
+            </div>
+        </div>
+
+        <div class="stage" id="stage3">
+            <h1>Tangkap Cinta Aku Yanggg</h1>
+            <div class="question">
+                Tangkap semua hati yang jatuh!<br>Gerakkin Keranjangnyaa
+            </div>
+            <div class="score-display">Skor: <span id="catchScore">0</span> / 10</div>
+            <div class="catch-game" id="catchGame">
+                <div class="catcher" id="catcher">🧺</div>
+            </div>
+        </div>
+
+        <div class="stage" id="stage4">
+            <h1>Seberapa Besar Cinta Kamu?</h1>
+            <div class="heart-counter" id="heartCounter">❤️</div>
+            <div class="question">
+                Klik sebanyak yang kamu mau!
+            </div>
+            <div class="button-group">
+                <button class="btn btn-choice" onclick="addHeart()"><span>💕 Tambah Cinta!</span></button>
+                <button class="btn btn-choice" onclick="nextStage(5)" style="margin-top: 0.5rem;"><span>Lanjut ➡️</span></button>
+            </div> 
+        </div>
+
+        <div class="stage" id="stage5">
+            <h1>Pertanyaan Spesial</h1>
+            <div class="emoji-big">💭</div>
+            <div class="question">
+                Apa yang paling kamu suka dariku?
+            </div>
+            <div class="button-group">
+                <button class="btn btn-choice" onclick="setAnswer('Senyummu yang manis')"><span>😊 Senyummu</span></button>
+                <button class="btn btn-choice" onclick="setAnswer('Cara kamu perhatian')"><span>🤗 Perhatianmu</span></button>
+                <button class="btn btn-choice" onclick="setAnswer('Semuanya!')"><span>✨ Semuanya!</span></button>
+                <button class="btn btn-choice" onclick="setAnswer('Yang penting kamu')"><span>💝 Yang penting kamu!</span></button>
+            </div>
+        </div>
+
+        <div class="stage" id="stage6">
+            <h1>Quest Selesai!</h1>
+            <div class="emoji-big">🏆</div>
+            <div class="message-box">
+                <div class="final-message">
+                    <p><strong>🎉 Selamat Hari Valentine Sayangg! 💖</strong></p>
+                    <p>Makasi yaa sudah nyelesain quest ini!</p>
+                    <p>Yang kamu suka dari aku: <strong id="userAnswer">...</strong></p>
+                    <p>Total cinta yang kamu berikan: <strong id="totalHearts">0</strong> ❤️</p>
+                    <br>
+                    <p>Aku cuma mau bilang, kamu adalah orang paling yang spesial dalam hidup aku. Setiap hari bersama kamu terasa seperti hadiah yang terbaik buat ak. Waktu kita mengobrol, main game bareng, dan sharing hal - hal random.. itu semua momen spesial banget buat aku. Walaupun kita jarang bertemu.. aku berharap perasaan kita akan selalu terhubung. Makasih ya udah bisa bikin aku selalu bahagia.. Semoga untuk setiap hari kedepan, Aku dan Kamu bisa selalu baik dan juga bahagiaa</p>
+                    <br>
+                    <p><strong>Happy Valentine's Day, sayang! 🌹</strong></p>
+                    <p><em>- Penuh cinta Akuu, untukmu -</em></p>
+                </div>
+            </div>
+            <button class="btn btn-choice" onclick="restart()"><span>🔄 Main Lagi?</span></button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
